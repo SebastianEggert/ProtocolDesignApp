@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab Automation Platform
+</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+<body>
+	<div class="contain " id="myTabs">
+		<ul class="nav nav-pills" role="tablist">
+		    <li class="nav-item">
+		      <a class="nav-link active" data-toggle="tab" href="#setup">Setup</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link " data-toggle="tab" href="#protocol">Protocol</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" data-toggle="tab" href="#sample">Samples</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link " data-toggle="tab" href="#preparation">Preparation</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link " data-toggle="tab" href="#execution">Execution</a>
+		    </li>
+		</ul>
+
+		<div class="row">
+			<div class = 'col-sm-4 logo-div'>
+				<img src="./assets/image/qut-2-logo-svg-vector.svg">
+			</div>
+			<div class = "col-sm-4 setup-btn">
+				<span id="title">Setup</span>
+			</div>
+		</div>
+
+		<div class="tab-content">
+
+			<!-- setup tab -->
+			<div class="contain tab-pane active" id="setup">
+				<div class="row">
+					<div class="col-sm-6 pf-div">
+						<img src="./assets/image/workspace.png">
+					</div>
+					<div class="col-sm-5" style="margin-top: 7%;">
+						<div class="form-group">
+						    <input type="text" class="form-control" id="protocol_name" name ="protocol_name" placeholder="Protocol Name">
+						</div>
+						<div class="connet-desc">
+							<h5 style="margin-top: 15px;">Please connect the platform to your USB Port!</h5>
+							<p style="margin-top: 25px;color: blue;">USB connected!</p>
+						</div>
+
+					</div>
+				</div>
+				<div class="row" style="margin-top: 30px;">
+					<div class="col-sm-8"></div>
+					<div class="col-sm-2 continue">
+						<span>CONTINUE</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Protocol tab -->
+			<div class="contain tab-pane fade" id="protocol">
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="row" style="margin-top: 30px;">
+							<div class="col-sm-1"></div>
+							<div class="col-sm-3">
+								<span style="font-size: 20px;font-weight: 600;">Wellplate Type</span>
+							</div>
+							<div class="col-sm-7">
+								<div class="form-group">
+								    <select id="well-select1" style="font-size: 20px;color: blue;width: 100%; text-alig:center;
+								    ">
+								    	<option>3x4 Heating Block </option>
+								    	<option>Other</option>
+								    </select>
+								</div>
+							</div>
+						</div>
+						<div class="row" style="margin-top: 30px;">
+							<div class="col-sm-1"></div>
+							<div class="col-sm-3">
+								<span style="font-size: 20px;font-weight: 600;">Define Inputs</span>
+							</div>
+							<div class="col-sm-2">
+								<div class="form-group">
+								    <select id="stock-select" style="font-size: 20px;color: blue;">
+								    	<option>Gel 1</option>
+								    	<option>Gel 2</option>
+								    	<option>Diluent 1</option>
+								    	<option>Diluent 2</option>
+								    	<option>Photinitiator</option>
+								    	<option>Cells</option>
+								    </select>
+								</div>
+							</div>
+							<div class="col-sm-2"></div>
+							<div class="col-sm-3">
+								<div class="form-group">
+								    <input type="text" class="form-control" id="stock_name" name ="stoct_name" placeholder="Name">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8"></div>
+							<div class="col-sm-3">
+							<div class=" input-group">
+							    <input type="text" class="form-control" id="stock_concentration" name ="stock_concentration" placeholder="Concentration">
+							    <div class="input-group-append">
+							    	<span class="input-group-text" id="concentrat_unit">(%)</span>
+								</div>
+							</div>
+						</div>
+						</div>
+						<div class="row" style="padding: 35px 0px">
+
+							<div class="col-sm-4"></div>
+							<div class="col-sm-3">
+								<span style="font-size: 20px;font-weight: 600;">Number of Samples</span>
+							</div>
+							<div class="col-sm-1"></div>
+							<div class="col-sm-1">
+								<input type="number" min="1" max="12" value="3" name="" style="height: 70%; font-size: 20px;" id="sample_num">
+							</div>
+							<div class="col-sm-2" style="margin-left: 4%;">
+								<button class="btn btn-primary mb-2" id="add_btn" style="border-radius: 15px; padding: 10px 20px;">+Add</button>
+							</div>
+						</div>
+
+						<div class="row"  style="padding: 50px 0px;">
+							<div class="col-sm-1"></div>
+							<div class="col-sm-3">
+								<div class="form-group">
+								<input type="checkbox" name="checkbox" id="cross_state" style="zoom:1.5;"> <label style="font-size: 18px; font-weight: 600;">Photo crosslinking</label>
+								</div>
+							</div>
+							<div class="col-sm-3 ">
+								<div class="input-group">
+									 <input type="text" class="form-control" id="cross_time" name ="times" placeholder="Time" disabled="true" ><div class="input-group-append">
+							    		<span class="input-group-text">(S)</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-1"></div>
+							<div class="col-sm-3 ">
+								<div class="input-group">
+									 <input type="text" class="form-control" id="cross_intensity" name ="intensity" placeholder="Intensity" disabled="true">
+									 <div class="input-group-append">
+							    		<span class="input-group-text">(W/m^2)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="table-responsive wellplate-img" style="margin-top: 40px;">
+							<table class="table">
+								<thead>
+									<tr>
+										<th></th><th>1</th><th>2</th><th>3</th><th>4</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<td>A</td>
+									<td><div class="stock1"></div></td><td><div class="stock4"></div></td><td><div class="stock7"></div></td><td><div class="stock10"></div></td>
+								</tr>
+								<tr>
+									<td>B</td>
+									<td><div class="stock2"></div></td><td><div class="stock5"></div></td><td><div class="stock8"></div></td><td><div class="stock11"></div></td>
+								</tr>
+								<tr>
+									<td>C</td>
+									<td><div class="stock3"></div></td><td><div class="stock6"></div></td><td><div class="stock9"></div></td><td><div class="stock12"></div></td>
+								</tr>
+								</tbody>
+
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 30px;">
+					<div class="col-sm-8"></div>
+					<div class="col-sm-2 continue">
+						<span>CONTINUE</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- sample tab-container -->
+			<div class="contain tab-pane fade" id="sample">
+				<div class="row" style="margin: 40px 20px;">
+					<div class="col-sm-6">
+						<div class="row" >
+							<div class="col-sm-6">
+								<span style="font-size: 22px;font-weight: 600;">WellPlate Type</span>
+							</div>
+							<div class="col-sm-5" style="text-align: center;">
+								<select style="font-size: 22px; color: blue;" id="well_select2">
+									<option>96 Well Plate</option>
+									<option>384 Well Plate</option>
+									<option>Other</option>
+								</select>
+							</div>
+						</div>
+						<div class="row" style="text-align: center;border:1px solid black;margin-top: 30px;">
+							<div class="col-sm-12" style="border:1px solid black;">
+								<div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+								    <div class="card">
+								      <div class="card-header"  role="tab" id="headingTwo1">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
+										        aria-expanded="false" aria-controls="collapseTwo1" style="text-decoration: none;">
+										        <h5 class="mb-0">
+										          Group1</h5>
+									      	</a>
+								      </div>
+								      <div id="collapseTwo1" class="collapse" role="tabpanel" 				aria-labelledby=""
+									      data-parent="#accordionEx1">
+										      <div class="card-body">
+
+												<div class="row totalVolume" style="margin: 20px 0px;">
+													<div class="col-sm-6">
+														<span >Total Volume in Well</span>
+													</div>
+													<div class="col-sm-5" >
+														<div class="input-group">
+														    <input type="text" class="form-control volume" id="volume" name ="volume" placeholder="Microlitre">
+														    <div class="input-group-append">
+														    	<span class="input-group-text">&mu;L)</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row" style="margin: 20px 0px;">
+													<div class="col-sm-6">
+														<span class ="cells_name"></span>
+													</div>
+													<div class="col-sm-5" >
+														<div class="input-group">
+														    <input type="text" class="form-control" id="cell_conc" name ="cell_conc" placeholder="Concentration">
+														    <div class="input-group-append">
+														    	<span class="input-group-text">(Cells/mL)</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row" style="margin: 20px 0px;">
+													<div class="col-sm-6">
+														<input type="checkbox" name="" checked="true"><label>Apply Advanced Mixing Protocol</label>
+													</div>
+													<!-- <div class="col-sm-5">
+														<input type="number" min="1" max="50" value="1" name="">
+													</div> -->
+												</div>
+
+												<div class="row" style="margin: 20px 0px;">
+													<div class="col-sm-6">
+														<span>Number of Samples</span>
+													</div>
+													<div class="col-sm-5" >
+														<input type="number" min="1" max="96" value="8" name="" class="groupSample1">
+													</div>
+												</div>
+									        </div>
+								      </div>
+								    </div>
+
+								    <!-- <div class="panel panel-default"> -->
+								</div>
+							</div>
+							<div class="col-sm-12 " id="addGroup" style="border:1px solid black;background-color: gray;cursor: pointer;">
+								<span style="color: white;font-size: 20px;">+ Add group</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-1"></div>
+					<div class="col-sm-5">
+						<div class="stock-img">
+						<table style="width: 100%; font-size: 25px;">
+							<tr>
+								<th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th>
+							</tr>
+							<tr class="CD">
+								<td class="num">A</td>
+								<td><div class="group1"></div></td><td><div class="group9"></div></td><td><div class="group17"></div></td><td><div class="group25"></div></td><td><div class="group33"></div></td><td><div class="group41"></div></td><td><div class="group49"></div></td><td><div class="group57"></div></td><td><div class="group65"></div></td><td><div class="group73"></div></td><td><div class="group81"></div></td><td><div class="group89"></div></td>
+							</tr>
+							<tr class="CD">
+								<td class="num">B</td>
+								<td><div class="group2"></div></td><td><div class="group10"></div></td><td><div class="group18"></div></td><td><div class="group26"></div></td><td><div class="group34"></div></td><td><div class="group42"></div></td><td><div class="group50"></div></td><td><div class="group58"></div></td><td><div class="group66"></div></td><td><div class="group74"></div></td><td><div class="group82"></div></td><td><div class="group90"></div></td>
+							</tr>
+							<tr class="CD">
+								<td class="num">C</td>
+								<td><div class="group3"></div></td><td><div class="group11"></div></td><td><div class="group19"></div></td><td><div class="group27"></div></td><td><div class="group35"></div></td><td><div class="group43"></div></td><td><div class="group51"></div></td><td><div class="group59"></div></td><td><div class="group67"></div></td><td><div class="group75"></div></td><td><div class="group83"></div></td><td><div class="group91"></div></td>
+							</tr>
+							<tr class="CD">
+								<td class="num">D</td>
+								<td><div class="group4"></div></td><td><div class="group12"></div></td><td><div class="group20"></div></td><td><div class="group28"></div></td><td><div class="group36"></div></td><td><div class="group44"></div></td><td><div class="group52"></div></td><td><div class="group60"></div></td><td><div class="group68"></div></td><td><div class="group76"></div></td><td><div class="group84"></div></td><td><div class="group92"></div></td>
+							</tr>
+							<tr class="CD">
+								<td class="num">E</td>
+								<td><div class="group5"></div></td><td><div class="group13"></div></td><td><div class="group21"></div></td><td><div class="group29"></div></td><td><div class="group37"></div></td><td><div class="group45"></div></td><td><div class="group53"></div></td><td><div class="group61"></div></td><td><div class="group69"></div></td><td><div class="group77"></div></td><td><div class="group85"></div></td><td><div class="group93"></div></td>
+							</tr>
+							<tr class="CD">
+								<td class="num">F</td>
+								<td><div class="group6"></div></td><td><div class="group14"></div></td><td><div class="group22"></div></td><td><div class="group30"></div></td><td><div class="group38"></div></td><td><div class="group46"></div></td><td><div class="group54"></div></td><td><div class="group62"></div></td><td><div class="group70"></div></td><td><div class="group78"></div></td><td><div class="group86"></div></td><td><div class="group94"></div></td>
+							</tr>
+							<tr class="CD">
+								<td class="num">G</td>
+								<td><div class="group7"></div></td><td><div class="group15"></div></td><td><div class="group23"></div></td><td><div class="group31"></div></td><td><div class="group39"></div></td><td><div class="group47"></div></td><td><div class="group55"></div></td><td><div class="group63"></div></td><td><div class="group71"></div></td><td><div class="group79"></div></td><td><div class="group87"></div></td><td><div class="group95"></div></td>
+							</tr>
+							<tr class="CD">
+								<td class="num">H</td>
+								<td><div class="group8"></div></td><td><div class="group16"></div></td><td><div class="group24"></div></td><td><div class="group32"></div></td><td><div class="group40"></div></td><td><div class="group48"></div></td><td><div class="group56"></div></td><td><div class="group64"></div></td><td><div class="group72"></div></td><td><div class="group80"></div></td><td><div class="group88"></div></td><td><div class="group96"></div></td>
+							</tr>
+						</table>
+						</div>
+						<div class="row" style="margin-top: 50px;margin-left: 3%;">
+							<!-- <div class="col-sm-5" id="sample_add">
+								<span>+ADD</span>
+							</div> -->
+							<div class="col-sm-1"></div>
+							<div class="col-sm-5 continue" >
+								<span>CONTINUE</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 	preparation tab -->
+			<div class="contain tab-pane fade" id="preparation">
+				<div class="row">
+					<div class="col-sm-7">
+						<div class=" sub-contain" id="style-1" style="overflow-y: scroll;max-height: 500px;">
+							<div class="row slot" id="slotA1" style="margin-bottom: 50px;">
+								<div class="col-sm-1" style="text-align: center;margin-top: 40px;">
+									<input type="checkbox" class="slotchecked" name="" >
+								</div>
+								<div class="col-sm-2 stock_img">
+									<img src="./assets/image/background.jpg">
+								</div>
+								<div class="col-sm-2" style="margin-top: 40px;">
+									<span>SlotA1:</span>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-5">
+									<select class="pos_select">
+										<option class="option0" selected>Input_Cell</option>
+										<option class="option1">Mixing_Cell</option>
+										<option class="option2">Output_Cell</option>
+										<option class="option3">Trash_Cell</option>
+										<option class="option4">Tips_Cell_1000µL</option>
+										<option class="option5">Tips_Cell_100µL</option>
+										<option class="option6">Empty_Cell</option>
+									</select>
+								</div>
+							</div>
+							<div class="row slot" id="slotA2" style="margin-bottom: 50px;">
+								<div class="col-sm-1" style="text-align: center;margin-top: 40px;">
+									<input type="checkbox" class="slotchecked" name="">
+								</div>
+								<div class="col-sm-2 stock_img">
+									<img src="./assets/image/background.jpg">
+								</div>
+								<div class="col-sm-2" style="margin-top: 40px;">
+									<span>SlotA2:</span>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-5">
+									<select class="pos_select">
+										<option class="option0">Input_Cell</option>
+										<option class="option1" selected>Mixing_Cell</option>
+										<option class="option2">Output_Cell</option>
+										<option class="option3">Trash_Cell</option>
+										<option class="option4">Tips_Cell_1000µL</option>
+										<option class="option5">Tips_Cell_100µL</option>
+										<option class="option6">Empty_Cell</option>
+									</select>
+								</div>
+							</div>
+							<div class="row slot" id="slotB1" style="margin-bottom: 50px;">
+								<div class="col-sm-1" style="text-align: center;margin-top: 40px;">
+									<input type="checkbox" class="slotchecked" name="">
+								</div>
+								<div class="col-sm-2 stock_img">
+									<img src="./assets/image/background.jpg">
+								</div>
+								<div class="col-sm-2" style="margin-top: 40px;">
+									<span>SlotB1:</span>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-5">
+									<select class="pos_select">
+										<option class="option0">Input_Cell</option>
+										<option class="option1">Mixing_Cell</option>
+										<option class="option2" selected>Output_Cell</option>
+										<option class="option3">Trash_Cell</option>
+										<option class="option4">Tips_Cell_1000µL</option>
+										<option class="option5">Tips_Cell_100µL</option>
+										<option class="option6">Empty_Cell</option>
+									</select>
+								</div>
+							</div>
+							<div class="row slot" id="slotB2"style="margin-bottom: 50px;">
+								<div class="col-sm-1" style="text-align: center;margin-top: 40px;">
+									<input type="checkbox" class="slotchecked" name="">
+								</div>
+								<div class="col-sm-2 stock_img">
+									<img src="./assets/image/background.jpg">
+								</div>
+								<div class="col-sm-2" style="margin-top: 40px;">
+									<span>SlotB2:</span>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-5">
+									<select class="pos_select">
+										<option class="option0">Input_Cell</option>
+										<option class="option1">Mixing_Cell</option>
+										<option class="option2">Output_Cell</option>
+										<option class="option3" selected>Trash_Cell</option>
+										<option class="option4">Tips_Cell_1000µL</option>
+										<option class="option5">Tips_Cell_100µL</option>
+										<option class="option6">Empty_Cell</option>
+									</select>
+								</div>
+							</div>
+							<div class="row slot" id=" slotC1" style="margin-bottom: 50px;">
+								<div class="col-sm-1" style="text-align: center;margin-top: 40px;">
+									<input type="checkbox" class="slotchecked" name="">
+								</div>
+								<div class="col-sm-2 stock_img">
+									<img src="./assets/image/background.jpg">
+								</div>
+								<div class="col-sm-2" style="margin-top: 40px;">
+									<span>SlotC1:</span>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-5">
+									<select class="pos_select">
+										<option class="option0">Input_Cell</option>
+										<option class="option1">Mixing_Cell</option>
+										<option class="option2">Output_Cell</option>
+										<option class="option3">Trash_Cell</option>
+										<option class="option4" selected>Tips_Cell_1000µL</option>
+										<option class="option5">Tips_Cell_100µL</option>
+										<option class="option6">Empty_Cell</option>
+									</select>
+								</div>
+							</div>
+							<div class="row slot" id="slotC2" style="margin-bottom: 50px;">
+								<div class="col-sm-1" style="text-align: center;margin-top: 40px;">
+									<input type="checkbox" class="slotchecked" name="">
+								</div>
+								<div class="col-sm-2 stock_img" >
+									<img src="./assets/image/background.jpg">
+								</div>
+								<div class="col-sm-2" style="margin-top: 40px;">
+									<span>SlotC2:</span>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-5">
+									<select class="pos_select">
+										<option class="option0">Input_Cell</option>
+										<option class="option1">Mixing_Cell</option>
+										<option class="option2">Output_Cell</option>
+										<option class="option3">Trash_Cell</option>
+										<option class="option4">Tips_Cell_1000µL</option>
+										<option class="option5" selected>Tips_Cell_100µL</option>
+										<option class="option6">Empty_Cell</option>
+									</select>
+								</div>
+							</div>
+							<div class="row slot" id="slotD1" style="margin-bottom: 50px;">
+								<div class="col-sm-1" style="text-align: center;margin-top: 40px;">
+									<input type="checkbox" class="slotchecked" name="">
+								</div>
+								<div class="col-sm-2 stock_img">
+									<img src="./assets/image/background.jpg">
+								</div>
+								<div class="col-sm-2 " style="margin-top: 40px;">
+									<span>SlotD1:</span>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-5">
+									<select class="pos_select">
+										<option class="option0">Input_Cell</option>
+										<option class="option1">Mixing_Cell</option>
+										<option class="option2">Output_Cell</option>
+										<option class="option3">Trash_Cell</option>
+										<option class="option4">Tips_Cell_1000µL</option>
+										<option class="option5">Tips_Cell_100µL</option>
+										<option class="option6" selected>Empty_Cell</option>
+									</select>
+								</div>
+							</div>
+							<div class="row slot" id="slotD2" style="margin-bottom: 50px;">
+								<div class="col-sm-1" style="text-align: center;margin-top: 40px;">
+									<input type="checkbox" class="slotchecked" name="">
+								</div>
+								<div class="col-sm-2 stock_img">
+									<img src="./assets/image/background.jpg">
+								</div>
+								<div class="col-sm-2" style="margin-top: 40px;">
+									<span>SlotD2:</span>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-5">
+									<select class="pos_select">
+										<option class="option0">Input_Cell</option>
+										<option class="option1">Mixing_Cell</option>
+										<option class="option2">Output_Cell</option>
+										<option class="option3">Trash_Cell</option>
+										<option class="option4">Tips_Cell_1000µL</option>
+										<option class="option5">Tips_Cell_100µL</option>
+										<option class="option6" selected>Empty_Cell</option>
+									</select>
+								</div>
+							</div>
+							<div class="row slot" style="margin-bottom: 50px;">
+								<div class="col-sm-1" style="text-align: center;margin-top: 40px;">
+									<input type="checkbox" class="pipettechecked" name="">
+								</div>
+								<div class="col-sm-2 stock_img">
+									<img src="./assets/image/pipette.png" style="width: 20%;">
+								</div>
+								<div class="col-sm-2" style="margin-top: 40px;">
+									<span >Pipette Left </span>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-6" style="margin-top: 40px;">
+									<div class="row">
+										<div class="col-sm-11">
+											<select class="pipette_select">
+												<option selected >100-1000uL positive displacement </option>
+												<option >10-100uL positivie displacement</option>
+											</select>
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-sm-6">
+											<div class="input-group">
+											    <input type="text" class="form-control" id="A_Speed1" name ="cell_concentration" placeholder="400" value="400">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="input-group">
+											    <input type="text" class="form-control" id="D_Speed1" name ="cell_concentration" placeholder="800" value="800">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row slot" style="margin-bottom: 50px;">
+								<div class="col-sm-1" style="text-align: center;margin-top: 40px;">
+									<input type="checkbox" pipettechecked name="" >
+								</div>
+								<div class="col-sm-2 stock_img">
+									<img src="./assets/image/pipette.png" style="width: 20%;">
+								</div>
+								<div class="col-sm-3" style="margin-top: 40px;">
+									<span >Pipette Right </span>
+								</div>
+								<!-- <div class="col-sm-1"></div> -->
+								<div class="col-sm-6" style="margin-top: 40px;">
+									<div class="row">
+										<div class="col-sm-11">
+											<select class="pipette_select">
+												<option >100-1000uL positive displacement </option>
+												<option selected>10-100uL positivie displacement</option>
+											</select>
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-sm-6">
+											<div class="input-group">
+											    <input type="text" class="form-control" id="A_Speed2" name ="cell_concentration" placeholder="400" value="400">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="input-group">
+											    <input type="text" class="form-control" id="D_Speed2" name ="cell_concentration" placeholder="800" value="800">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-1">
+					</div>
+					<div class="col-sm-3" style="margin-top: 100px;">
+						<img src="./assets/image/workspace.svg" style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 30px;">
+					<div class="col-sm-9"></div>
+					<div class="col-sm-2 run" data-toggle="popover" data-trigger="hover" data-placement="top" title="Please confirm the entire setup!" data-content="">
+						<span >GENERATE PROTOCOL</span>
+					</div>
+				</div>
+			</div>
+			<!-- Execution -->
+			<div class="contain tab-pane fade" id="execution">
+				<div class="row" style="margin: 40px;">
+					<div class="col-sm-6" style="max-height: 400px;border: 1px solid;height: 500px;overflow-y: scroll;">
+					</div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-3" style="margin: 150px 0;">
+						<!-- <div style="border: 1px solid;text-align: center;padding: 20px;    border-radius: 15px;">
+							<span id="interrupt-btn">INTERRUPT</span>
+						</div> -->
+					</div>
+				</div>
+				<div class="row" style="margin: 40px;">
+					<div class="col-sm-6">
+						<div class="progress">
+							<div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%"></div>
+						</div>
+					</div>
+					<div class="col-sm-1"></div>
+					<div onclick="progressbar()" class="col-sm-2" id="save_btn">
+						<span>RUN PYTHON<br>SCRIPT</span>
+					</div>
+					<!-- <div class="col-sm-1"></div>
+					<div class="col-sm-2" id="show_report_btn">
+						<span>SHOW<br>REPORT</span>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./assets/js/data.json"></script>
+	<script type="text/javascript" src="./assets/js/initial.js"></script>
+	<script type="text/javascript" src="./assets/js/protocol.js"></script>
+	<script type="text/javascript" src="./assets/js/sample.js"></script>
+	<script type="text/javascript" src="./assets/js/preparation.js"></script>
+	<script type="text/javascript" src="./assets/js/execution.js"></script>
+	<script type="text/javascript" src="./assets/js/navigation.js"></script>
+</body>
+</html>

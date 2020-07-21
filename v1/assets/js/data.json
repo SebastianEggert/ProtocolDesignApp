@@ -1,0 +1,378 @@
+var data = {
+"protocolName":"",
+"Input":{
+		"wellplateType":"",
+		"stockCNT" : "4",
+		"stock":[{
+					"type": "",
+					"name": "",
+					"concentration": "",
+					"sampleNumer" : "",
+					"location": [""]
+			},
+			{
+					"type": "",
+					"name": "",
+					"concentration": "",
+					"sampleNumer" : "",
+					"location": [""]
+			},
+			{
+					"type": "",
+					"name": "",
+					"concentration": "",
+					"sampleNumer" : "",
+					"location": [""]
+			},
+			{
+					"type": "",
+					"name": "",
+					"concentration": "",
+					"sampleNumer" : "",
+					"location": [""]
+			},
+			{
+					"type": "",
+					"name": "",
+					"concentration": "",
+					"sampleNumer" : "",
+					"location": [""]
+			},
+		{
+					"type": "",
+					"name": "",
+					"concentration": "",
+					"sampleNumer" : "",
+					"location": [""]
+			}],
+		"crosslink":{
+					"checked":"",
+					"Duration":"",
+					"Intensity":"",
+			}
+		},
+"Output":{
+		"wellplateType":"",
+		"group":[
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"GelMy",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+					"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			},
+			{
+				"Gel1": {
+						"name":"",
+						"concentration":""
+						},
+				"Gel2": {
+						"name":"",
+						"concentration":""
+				        },
+				"PhotoInitiator": {
+									"name":"",
+									"concentration":""
+							       },
+				"TotalVolume":"",
+				"Cells":{
+						"name":"",
+						"concentration":""
+				        },
+				"MixPrecursorSolution":{
+										"checked":"",
+										"value":""
+										},
+				"SampleNumber":"",
+				"location":[""]
+			}
+		]},
+"Postion":{
+			"A1":"",
+			"A2":"",
+			"B1":"",
+			"B2":"",
+			"C1":"",
+			"C2":"",
+			"D1":"",
+			"D2":"",
+			"PiptteLeft":{
+						"type":"",
+						"A_Speed":"",
+						"D_Speed":""
+			},
+			"PiptteRight":{
+						"type":"",
+						"A_Speed":"",
+						"D_Speed":""
+			}
+		}
+}
